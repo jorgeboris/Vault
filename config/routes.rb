@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get "bienvenida", to: "home#index"
 
   get 'supervisors/new', to: 'supervisors#new'
+  get 'supervisors/:id', to: 'supervisors#show'
   post 'supervisors', to: 'supervisors#create'
 end

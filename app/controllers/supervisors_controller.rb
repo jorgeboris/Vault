@@ -1,4 +1,8 @@
 class SupervisorsController < ApplicationController
+  def show
+    @supervisor = Supervisor.find(params[:id])
+  end
+
   def new
     @supervisor = Supervisor.new
     @supervisor.name = 'Demo'
