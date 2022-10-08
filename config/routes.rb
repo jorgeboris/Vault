@@ -4,5 +4,8 @@ Rails.application.routes.draw do
 
   get 'supervisors/new', to: 'supervisors#new'
   get 'supervisors/:id', to: 'supervisors#show'
+  get 'supervisors/:id/edit', to: 'supervisors#edit'
+
+  patch 'supervisors/:id', to: 'supervisors#update', as: :supervisor
   post 'supervisors', to: 'supervisors#create'
 end
