@@ -1,14 +1,11 @@
 class SupervisorsController < ApplicationController
-  def show
-    @supervisor = Supervisor.find(params[:id])
-  end
+  before_action :find_supervisor, only: [:show, :edit, :update, :destroy]
 
-  def edit
-    @supervisor = Supervisor.find(params[:id])
-  end
+  def show; end
+
+  def edit; end
 
   def update
-    @supervisor = Supervisor.find(params[:id])
     @supervisor.update(name: params[:supervisor][:name], email: params[:supervisor][:email], cellphone: params[:supervisor][:cellphone])
     redirect_to @supervisor
   end
@@ -24,8 +21,11 @@ class SupervisorsController < ApplicationController
   end
 
   def destroy
-    @supervisor = Supervisor.find(params[:id])
     @supervisor.destroy
     redirect_to root_path
+  end
+
+  def find_supervisor
+    @supervisor = Supervisor.find(params[:id])
   end
 end
