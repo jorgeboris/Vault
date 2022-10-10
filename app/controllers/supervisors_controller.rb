@@ -9,7 +9,7 @@ class SupervisorsController < ApplicationController
 
   def update
     @supervisor = Supervisor.find(params[:id])
-    @supervisor.update(name: params[:supervisor][:name])
+    @supervisor.update(name: params[:supervisor][:name], email: params[:supervisor][:email], cellphone: params[:supervisor][:cellphone])
     redirect_to @supervisor
   end
 
