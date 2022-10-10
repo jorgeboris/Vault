@@ -19,7 +19,13 @@ class SupervisorsController < ApplicationController
   end
 
   def create
-    @supervisor = Supervisor.create(name: params[:supervisor][:name])
+    @supervisor = Supervisor.create(name: params[:supervisor][:name], email: params[:supervisor][:email], cellphone: params[:supervisor][:cellphone])
     render json: @supervisor
+  end
+
+  def destroy
+    @supervisor = Supervisor.find(params[:id])
+    @supervisor.destroy
+    redirect_to root_path
   end
 end
