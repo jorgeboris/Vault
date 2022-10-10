@@ -1,6 +1,10 @@
 class SupervisorsController < ApplicationController
   before_action :find_supervisor, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @supervisors = Supervisor.all
+  end
+
   def show; end
 
   def edit; end
