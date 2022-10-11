@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'bienvenida', to: 'home#index'
 
   get 'supervisors', to: 'supervisors#index'
-  get 'supervisors/new', to: 'supervisors#new'
+  get 'supervisors/new', to: 'supervisors#new', as: :new_supervisors
   get 'supervisors/:id', to: 'supervisors#show'
   get 'supervisors/:id/edit', to: 'supervisors#edit'
   patch 'supervisors/:id', to: 'supervisors#update', as: :supervisor
