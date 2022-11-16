@@ -1,0 +1,15 @@
+%nav.nav.bg-light
+  %li.nav-item
+    = link_to 'Inicio', root_path, class:"nav-link"
+  %li.nav-item
+    = link_to 'Supervisores', supervisors_path, class:"nav-link"
+  %li.nav-item
+    = link_to 'Nuevo', new_supervisors_path, class:"nav-link"
+  - if user_signed_in?
+    %li.nav-item
+      = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"nav-link"
+  - else
+    %li.nav-item
+      = link_to 'Iniciar sesión', new_user_session_path, class:"nav-link"
+    %li.nav-item
+      = link_to 'Registro', new_user_registration_path, class:"nav-link"

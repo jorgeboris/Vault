@@ -1,0 +1,15 @@
+= form_with(model: @supervisor, local: true) do |form|
+  .field
+    = form.label :name
+    = form.text_field :name
+  %br/
+  .field
+    = form.label :email
+    = form.text_field :email
+  %br/
+  .field
+    = form.label :cellphone
+    = form.text_field :cellphone
+  %br/
+  %div
+    = form.submit
