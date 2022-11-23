@@ -1,29 +1,19 @@
 %h2 Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .container
-    .row.d-flex.justify-content-center.mt-5
-      .col-12.col-md-8.col-lg-6.col-xl-5
-        .card.py-3.px-2
-          .division
-            .row
-              .col-3
-                .line.l
-              .col-6
-                %span LOGIN
-              .col-3
-                .line.r
-          %form.myform
-            .form-group
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control text-white', placeholder: 'Correo'
-            .form-group
-              = f.password_field :password, autocomplete: "current-password", class: 'form-control text-white', placeholder: 'Contraseña'
-            .row
-              .col-md-6.col-12
-                .form-group.form-check
-                  - if devise_mapping.rememberable?
-                    %label
-                      = f.check_box :remember_me, class: 'form-check-input'
-                      %span.fs-5 Recuerdame
-              = render "devise/shared/links"
-            .form-group.mt-3.d-grid.px-4
-              = f.submit "Inicio de Sesión", class: 'btn btn-block btn-primary btn-lg'
+  .form
+    %span LOGIN
+    .form__container
+      .form-
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-inputs', placeholder: 'Correo'
+      .form-inputs
+        = f.password_field :password, autocomplete: "current-password", class: 'form-inputs', placeholder: 'Contraseña'
+      .row
+        .col-md-6.col-12
+          .form-group.form-check
+            - if devise_mapping.rememberable?
+              %label
+                = f.check_box :remember_me, class: 'form-check-input'
+                %span.fs-5 Recuerdame
+        = render "devise/shared/links"
+      .form-group.mt-3.d-grid.px-4
+        = f.submit "Inicio de Sesión", class: 'btn btn-block btn-primary btn-lg'

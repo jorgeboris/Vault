@@ -1,0 +1,25 @@
+.margin-top{
+	margin-top: 1.5em;
+}
+
+.form {
+	background-color: $form-background;
+	display: flex;
+	flex-direction: column;
+  	justify-content: center;
+	margin: auto;
+	width: 30rem;
+
+	&__container {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		justify-content: center;
+		width: 100%;
+	}
+	
+	.form-inputs input{
+		border-radius: 16px;
+	}
+}
