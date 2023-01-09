@@ -1,25 +1,59 @@
-.margin-top{
-	margin-top: 1.5em;
-}
-
 .form {
 	background-color: $form-background;
 	display: flex;
 	flex-direction: column;
   	justify-content: center;
 	margin: auto;
-	width: 30rem;
+	width: 32rem;
+	border-radius: 5px;
+	margin-top: 10%;
+
+	&__linetop {
+		height: 0.5rem;
+		background-color: $purple;
+		border-radius: 5px 5px 0 0;
+	}
 
 	&__container {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		height: 28rem;
 		justify-content: center;
 		width: 100%;
+		color: white;
 	}
-	
+	.form-inputs {
+		display: flex;
+		justify-content: center;
+		width: 90%;
+		height: 2.5rem;
+		margin-top: .5rem;
+	}
+
 	.form-inputs input{
-		border-radius: 16px;
+		border-radius: 4px;
+		background-color: $form-background;
+		outline: none;
+		border: 1px solid $dark-purple;
+		color: white;
+	}
+
+	.devise_shared {
+		margin-top: 1rem;
+	}
+
+	.btn_submit{
+		width: 90%;
+		display: flex;
+		justify-content: center;
+	}
+	.btn_login{
+		width: 90%;
+		height: 2.5rem;
+		background: linear-gradient(135deg, $purple 39%,$purple-gloss 101%);
+		color: white;
+		border: 0;
+		border-radius: 2rem;
 	}
 }

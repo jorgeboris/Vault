@@ -1,19 +1,18 @@
 %h2 Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form
-    %span LOGIN
+    .form__linetop
     .form__container
-      .form-
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-inputs', placeholder: 'Correo'
+      %h1 Log In
       .form-inputs
-        = f.password_field :password, autocomplete: "current-password", class: 'form-inputs', placeholder: 'Contraseña'
-      .row
-        .col-md-6.col-12
-          .form-group.form-check
-            - if devise_mapping.rememberable?
-              %label
-                = f.check_box :remember_me, class: 'form-check-input'
-                %span.fs-5 Recuerdame
-        = render "devise/shared/links"
-      .form-group.mt-3.d-grid.px-4
-        = f.submit "Inicio de Sesión", class: 'btn btn-block btn-primary btn-lg'
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Correo'
+      .form-inputs
+        = f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Contraseña'
+      %div.devise_shared
+        - if devise_mapping.rememberable?
+          %label
+            = f.check_box :remember_me, class: 'form-check-input'
+            %span Recuerdame
+      = render "devise/shared/links"
+      .btn_submit
+        = f.submit "Inicio de Sesión", class: 'btn_login'
