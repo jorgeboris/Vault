@@ -1,0 +1,15 @@
+= form_with(model: @enterprise, local:true) do |form|
+  %div
+    = form.label :name
+    = form.text_field :name
+  %div
+    = form.label :address
+    = form.text_field :address
+  %div
+    = form.label :email
+    = form.text_field :email
+  %div
+    = form.label :cellphone
+    = form.text_field :cellphone
+  %div
+    = form.submit

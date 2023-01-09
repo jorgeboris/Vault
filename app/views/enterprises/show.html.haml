@@ -1,0 +1,6 @@
+%h1= @enterprise.name
+%div= @enterprise.address
+%div= @enterprise.email
+%div= @enterprise.cellphone
+%div
+  = link_to 'Eliminar Empresa', @enterprise, method: :delete

@@ -3,6 +3,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'bienvenida', to: 'home#index'
 
+  get 'enterprises', to: 'enterprises#index'
+  get 'enterprises/new', to: 'enterprises#new'
+  get 'enterprises/:id', to: 'enterprises#show'
+  get 'enterprises/:id/edit', to: 'enterprises#edit'
+  patch 'enterprises/:id', to: 'enterprises#update', as: :enterprise
+  post 'enterprises', to: 'enterprises#create'
+  delete 'enterprises/:id', to: 'enterprises#destroy'
+
   get 'supervisors', to: 'supervisors#index'
   get 'supervisors/new', to: 'supervisors#new', as: :new_supervisors
   get 'supervisors/:id', to: 'supervisors#show'
